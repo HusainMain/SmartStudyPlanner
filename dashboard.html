@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>Dashboard - Smart Study Planner</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">StudyPlanner</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard">
+        <h1>Welcome, Student!</h1>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-card">
+                <h3>📋 Total Tasks</h3>
+                <p class="stat-number">12</p>
+            </div>
+            <div class="stat-card">
+                <h3>✅ Completed</h3>
+                <p class="stat-number">5</p>
+            </div>
+            <div class="stat-card">
+                <h3>⏳ Pending</h3>
+                <p class="stat-number">7</p>
+            </div>
+            <div class="stat-card">
+                <h3>⏱️ Study Hours</h3>
+                <p class="stat-number">24</p>
+            </div>
+        </section>
+
+        <!-- Progress -->
+        <section class="progress-section">
+            <h2>Overall Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 42%">42%</div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-buttons">
+                <button id="btn-add-task">+ Add Task</button>
+                <button id="btn-add-subject">+ Add Subject</button>
+                <button id="btn-timer">Start Timer</button>
+            </div>
+        </section>
+
+        <!-- Add Task Form (hidden by default) -->
+        <section id="task-form-section" class="task-form-section" style="display:none;">
+            <h2>Add New Task</h2>
+            <form id="task-form">
+                <input type="text" id="task-name" placeholder="Task name" required>
+                <input type="text" id="task-subject" placeholder="Subject" required>
+                <input type="date" id="task-due" required>
+                <select id="task-priority">
+                    <option value="high">High</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <!-- Pomodoro Timer -->
+        <section id="timer-section" class="timer-section" style="display:none;">
+            <h2>🍅 Pomodoro Timer</h2>
+            <p id="timer-display" class="timer-display">25:00</p>
+            <div class="action-buttons">
+                <button id="timer-start">Start</button>
+                <button id="timer-pause">Pause</button>
+                <button id="timer-reset">Reset</button>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="filters">
+            <h2>Recent Tasks</h2>
+            <div class="filter-controls">
+                <select id="filter-subject">
+                    <option value="all">All Subjects</option>
+                </select>
+                <select id="filter-priority">
+                    <option value="all">All Priorities</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <button id="btn-sort-deadline">Sort by Deadline</button>
+            </div>
+        </section>
+
+        <div class="task-list" id="task-list"></div>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Smart Study Planner. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
+
+
+
+
