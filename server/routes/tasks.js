@@ -29,6 +29,7 @@ router.post('/', async (req, res) => {
             subject: subject.trim(),
             due,
             priority,
+            completed: req.body.completed === true,
             user: req.user.id,
         });
         res.status(201).json(task);
