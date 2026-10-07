@@ -22,7 +22,7 @@ mongoose
     .connect(process.env.MONGO_URI, { serverSelectionTimeoutMS: 5000 })
     .then(() => {
         console.log('MongoDB connected');
-        app.listen(process.env.PORT, () => console.log(`Server running on http://localhost:${process.env.PORT}`));
+        app.listen(process.env.PORT || 10000, () => console.log(`Server running on http://localhost:${process.env.PORT || 10000}`));
     })
     .catch((err) => console.error('DB connection error:', err));
 
