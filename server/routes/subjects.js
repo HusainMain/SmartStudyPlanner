@@ -25,4 +25,11 @@ router.post('/', async (req, res) => {
     }
 });
 
+// DELETE /api/subjects/:id
+router.delete('/:id', async (req, res) => {
+    const subject = await Subject.findOneAndDelete({ _id: req.params.id, user: req.user.id });
+    if (!subject) return res.status(404).json({ message: 'Subject not found' });
+    res.json({ message: 'Subject deleted' });
+});
+
 module.exports = router;
