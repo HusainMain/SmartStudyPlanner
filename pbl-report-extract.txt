@@ -1,0 +1,536 @@
+GUJARAT TECHNOLOGICAL UNIVERSITY
+Chandkheda, Ahmedabad
+Affiliated
+Sardar Vallabhbhai Patel Institute of Technology,
+Vasad
+A Project On
+PBL Activity 3: Complex Problem Solving (CPS)
+FoodBridge: An SDG-Oriented Surplus Food Rescue Web Application
+Under the Subject
+Web Application Development (BE05000281)
+BE 3rd YEAR, SEM 5 (Computer Engineering branch)
+Submitted by:
+Miral D. Bhalani (240410107011)
+Prof. Nidhi Shah
+(Faculty Guide)
+Prof. Jayna Shah
+(Head of the Department)
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+TABLE OF CONTENTS
+Sr no.
+Topic
+Page no.
+1
+Title Page
+3
+2
+Introduction
+3
+3
+Project Definition & Problem Statement / Objectives
+4
+4
+Proposed System / System Design
+5
+5
+Screenshots of Results
+9
+6
+Conclusion and Future Scope
+11
+7
+References
+11
+ENR NO.: 240410107011
+2
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+1. Title Page
+FOODBRIDGE: AN SDG-ORIENTED SURPLUS FOOD RESCUE 
+WEB APPLICATION
+A full-stack (MERN) web application that connects food donors with NGOs to reduce hunger and food waste
+Item
+Details
+Project title
+FoodBridge: An SDG-Oriented Surplus Food Rescue Web Application
+Activity
+PBL Activity 3 – Complex Problem Solving (CPS)
+SDGs addressed
+SDG 2 (Zero Hunger), SDG 12 (Responsible Consumption and 
+Production)
+Subject
+Web Application Development (BE05000281)
+Technology stack
+MongoDB, Express.js, React.js, Node.js (MERN)
+Submitted by
+Miral D. Bhalani (240410107011)
+Class
+BE 3rd Year, Semester 5, Computer Engineering
+Faculty guide
+Prof. Nidhi Shah
+Institute
+Sardar Vallabhbhai Patel Institute of Technology, Vasad
+2. Introduction
+A web application is software that runs on a web server and is used through a web browser. Unlike 
+a static website that only shows fixed pages, a web application accepts input from users, stores data 
+in a database and shows each user information that matches their role. Modern web applications are 
+usually split into a frontend (what the user sees), a backend (the server logic and API) and a 
+database (where data is stored permanently).
+The United Nations Sustainable Development Goals (SDGs) are 17 global goals for 2030. SDG 2 
+– Zero Hunger aims to end hunger, and SDG 12 – Responsible Consumption and Production 
+includes target 12.3, which aims to halve food waste by 2030. In India, hotels, hostels, caterers and 
+wedding halls throw away large amounts of good cooked food every day, while NGOs and food 
+banks nearby struggle to collect enough food for the people they serve.
+The real problem is the last mile: cooked food stays fresh for only a few hours, and donors and 
+NGOs have no quick, reliable way to find each other within that time. Phone calls and WhatsApp 
+groups are slow, messages get lost, two NGOs may travel for the same food, and nobody can 
+measure how much food was actually saved.
+In this project a web application named FoodBridge is designed and developed using the MERN 
+stack. A donor lists surplus food with its quantity, pickup address and expiry time. Nearby NGOs 
+see the listing, one NGO claims it, collects it and marks it picked up. The home page shows live 
+impact numbers: meals served, kilograms of food rescued and CO₂ emissions avoided.
+Need of the project: faster matching of surplus food with NGOs, no double pickups, less food 
+going to landfill, a record of every donation, and measurable SDG impact that donors and NGOs 
+can see.
+ENR NO.: 240410107011
+3
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+Web technologies used in this project:
+•
+HTML5 and CSS3 – semantic page structure, Flexbox and Grid layouts and media queries 
+for a responsive design.
+•
+JavaScript (ES6+) – arrow functions, destructuring, Promises and async/await for API 
+calls.
+•
+React.js – a component-based Single Page Application (SPA) with hooks, routing and 
+global state.
+•
+Node.js and Express.js – a REST API server with middleware for logging, authentication 
+and error handling.
+•
+MongoDB with Mongoose – a NoSQL document database with schemas, validation and 
+aggregation.
+•
+HTTP, JSON and REST – communication between the browser and the server, tested 
+with Postman.
+3. Project Definition & Problem Statement / Objectives
+3.1 Project Definition
+Table 1: Project definition
+Item
+Details
+PBL activity
+Activity 3 – Complex Problem Solving (CPS)
+Domain
+Social good / sustainability (SDG-oriented web application)
+Project title
+FoodBridge – Surplus Food Rescue Platform
+Users (roles)
+Donor (hotel, hostel, caterer), NGO (food bank, shelter), Admin
+Frontend
+React 18, Vite, React Router, Axios, CSS3
+Backend
+Node.js, Express.js 4, JSON Web Token (JWT), bcrypt
+Database
+MongoDB with Mongoose ODM
+Tools
+VS Code, MongoDB Compass, Postman, npm, Git, Jest
+3.2 Problem Statement
+Restaurants, hostels and caterers regularly have surplus cooked food that is still safe to eat, but it is 
+thrown away because there is no fast way to inform nearby NGOs before it spoils. NGOs, on the 
+other hand, do not know where food is available, and when information is shared informally two 
+NGOs may go for the same food while other food expires. There is also no record of how much 
+food is rescued. A web application is required that lets donors list surplus food quickly, lets NGOs 
+find and claim it without conflicts, tracks every donation from listing to pickup, and shows the 
+social and environmental impact in real time.
+3.3 Objectives
+1. To design and develop a full-stack web application using React, Node.js, Express.js and 
+MongoDB.
+2. To provide secure registration and login with hashed passwords and JWT-based 
+authentication.
+ENR NO.: 240410107011
+4
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+3. To implement role-based access so that only donors can list food and only NGOs can claim 
+it.
+4. To build REST APIs that perform all CRUD operations on food donations.
+5. To prevent two NGOs from claiming the same donation using an atomic database update.
+6. To automatically mark listings as expired when their pickup time has passed.
+7. To calculate and display live SDG impact (meals served, kg rescued, CO₂e avoided) using 
+MongoDB aggregation.
+8. To make the user interface responsive so it works on mobile phones and computers.
+3.4 Scope of the Project
+The project covers user management, donation listing, searching and filtering, claiming, pickup 
+confirmation, personal dashboards and a public impact dashboard. It runs locally with MongoDB 
+and can be deployed to the cloud. Features such as live maps, SMS alerts, payment, and food-
+quality inspection are outside the scope of this version and are listed as future enhancements.
+4. Proposed System / System Design
+4.1 System Architecture
+FoodBridge follows a three-tier client–server architecture (Figure 1). The React application 
+runs in the browser and sends HTTP requests in JSON format. The Express server checks the 
+request through a chain of middleware, runs the business logic in a controller, and reads or writes 
+data in MongoDB through Mongoose. The server then sends a JSON response, and React updates 
+only the parts of the page that changed.
+Figure 1: System architecture of FoodBridge
+4.2 Technologies Used
+Table 2: Technologies used
+Layer
+Technology
+Purpose in project
+Frontend
+React 18 + Vite
+Component-based SPA, fast development server 
+and build
+Routing
+React Router 6
+Pages without full reload; protected routes
+ENR NO.: 240410107011
+5
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+HTTP client
+Axios
+API calls; interceptor adds JWT to every request
+Styling
+CSS3 (Flexbox, Grid, media 
+queries)
+Responsive layout for mobile and desktop
+Backend
+Node.js + Express.js 4
+REST API, routing and middleware
+Security
+bcryptjs, jsonwebtoken
+Password hashing and token-based login
+Database
+MongoDB + Mongoose 8
+Document storage, schema validation, 
+aggregation
+Testing
+Jest, Supertest, Postman
+Unit tests, API tests, manual API testing
+Deployment
+Docker, Render, Vercel, Atlas
+Container and cloud hosting options
+4.3 Modules of the System
+•
+Authentication module – register as donor or NGO, log in, stay logged in using a saved 
+token, log out.
+•
+Donation module – donors create, edit and delete listings with title, category, quantity 
+(kg), expiry time and pickup address.
+•
+Search and filter module – anyone can browse listings and filter by text, city, category and 
+status.
+•
+Claim and pickup module – NGOs claim available food; the donor's phone number is then 
+shown only to that NGO, and either side marks the food as picked up.
+•
+Dashboard module – each user sees their own listings or claims with personal impact 
+numbers and status tabs.
+•
+Impact (SDG) module – public statistics: meals served, kg rescued, CO₂e avoided, rescue 
+rate and food rescued by category.
+4.4 Database Design
+MongoDB stores data as JSON-like documents in collections. Two collections are used. The donor 
+and claimedBy fields of a donation store the ObjectId of a user, which creates a relationship that 
+Mongoose resolves with populate() (similar to a JOIN in SQL).
+Table 3: users collection
+Field
+Type
+Rules / description
+name
+String
+Required
+email
+String
+Required, unique, lowercase, valid email format
+password
+String
+Required, min 6 characters, stored as bcrypt hash, hidden 
+from queries
+role
+String
+donor | ngo | admin (default donor)
+organization, city, phone
+String
+Optional profile details
+createdAt, updatedAt
+Date
+Added automatically (timestamps)
+Table 4: donations collection
+Field
+Type
+Rules / description
+ENR NO.: 240410107011
+6
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+title, description
+String
+Title required (max 100); description optional (max 
+500)
+category
+String
+cooked | raw | packaged | bakery | fruits-vegetables
+quantityKg
+Number
+Required, minimum 0.5 kg
+expiresAt
+Date
+Required; time by which food must be picked up
+pickupAddress, city
+String
+Required
+status
+String
+available | claimed | picked_up | expired
+donor
+ObjectId → 
+User
+Set from the logged-in user's token
+claimedBy
+ObjectId → 
+User
+NGO that claimed the food (null until claimed)
+claimedAt, pickedUpAt
+Date
+Time of each step
+4.5 REST API Design
+The backend exposes a REST API. Each URL names a resource and the HTTP method names the 
+action, so CRUD maps directly to POST, GET, PUT/PATCH and DELETE.
+Table 5: API endpoints
+Method
+Endpoint
+Access
+Purpose
+POST
+/api/auth/register
+Public
+Create donor or NGO account
+POST
+/api/auth/login
+Public
+Log in and receive a JWT
+GET
+/api/auth/me
+Logged in
+Details of current user
+GET
+/api/donations
+Public
+List and filter donations
+GET
+/api/donations/mine
+Logged in
+My listings / my claims with impact
+POST
+/api/donations
+Donor
+Create a donation (201 Created)
+PUT
+/api/donations/:id
+Donor (owner)
+Edit a listing while available
+DELET
+E
+/api/donations/:id
+Owner / Admin
+Delete a listing
+PATCH
+/api/donations/:id/claim
+NGO
+Claim food (409 if already taken)
+PATCH
+/api/donations/:id/pickup
+NGO / Donor
+Mark as picked up
+GET
+/api/stats
+Public
+SDG impact using aggregation
+4.6 Working of the System
+Every donation moves through a fixed life-cycle (Figure 2). Only food that reaches the picked up 
+state is counted in the impact numbers; food that reaches expired is counted as wasted.
+ENR NO.: 240410107011
+7
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+Figure 2: Donation status life-cycle
+1. The donor logs in. The server checks the password with bcrypt and returns a signed JWT, 
+which React saves in localStorage.
+2. The donor fills the donation form. React sends POST /api/donations with the token; the 
+protect middleware verifies the token and authorize('donor') checks the role.
+3. Mongoose validates the data against the schema and saves it in the donations collection 
+with status available.
+4. An NGO opens Find Food. React calls GET /api/donations?status=available and 
+shows each listing as a card.
+5. The NGO clicks Claim. The server runs findOneAndUpdate with the condition status = 
+available, so if two NGOs click together only one succeeds and the other receives 409 
+Conflict.
+6. After collecting the food, the NGO clicks Mark picked up. The status changes to picked_up 
+and the impact numbers increase.
+7.
+GET /api/stats uses MongoDB aggregation ($match, $group, $sort) to calculate meals 
+(kg ÷ 0.4) and CO₂e avoided (kg × 2.5, based on FAO estimates).
+4.7 Security Features
+•
+Passwords are hashed with bcrypt (salt and 10 rounds) before saving; plain passwords are 
+never stored.
+•
+JWT authentication: protected routes return 401 Unauthorized without a valid token.
+•
+Role-based authorization on the server: wrong role returns 403 Forbidden, even if the 
+browser is modified.
+•
+The donor ID is taken from the token, not from the request body, and only whitelisted fields 
+can be updated.
+•
+Secrets (database URL, JWT secret) are kept in a .env file that is excluded from Git.
+•
+A central error handler converts validation errors to 400, duplicate emails to 409 and 
+unknown routes to 404.
+4.8 Implementation Steps
+1. Install Node.js and MongoDB Community Server (with MongoDB Compass).
+2. Create the backend folder: npm init, install express, mongoose, cors, dotenv, bcryptjs and 
+jsonwebtoken.
+ENR NO.: 240410107011
+8
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+3. Create Mongoose models (User, Donation), controllers, routes and middleware in an 
+MVC-style structure.
+4. Create the React frontend with Vite; install react-router-dom and axios; build pages and 
+components.
+5. Configure the Vite proxy so that /api requests from port 5173 reach the Express server on 
+port 5000.
+6. Insert sample data with a seed script, then test all APIs in Postman and with Jest.
+7. Run the complete application with one command from the project folder:
+npm run install-all     # install packages for backend and frontend
+npm run seed            # insert sample users and donations into MongoDB
+npm run dev             # start backend (5000) and frontend (5173) together
+5. Screenshots of Results
+The application was run and the following functional tests were carried out. All tests gave the 
+expected result.
+Table 6: Test results
+Test
+Action
+Expected result
+Result
+1
+Open home page
+Live impact stats loaded from /api/stats
+Pass
+2
+Log in as donor
+Token issued, dashboard opens
+Pass
+3
+Donor posts a donation
+201 Created, appears as Available
+Pass
+4
+NGO claims the donation
+Status Claimed, donor phone shown
+Pass
+5
+Second claim on same food
+409 Conflict, "no longer available"
+Pass
+6
+NGO marks picked up
+Status Picked up, impact increases
+Pass
+7
+POST /api/donations without 
+token
+401 Unauthorized
+Pass
+8
+Automated tests (npm test)
+8 of 8 tests pass
+Pass
+Screenshot 1: Home page with live SDG impact
+What it shows: meals served, kg rescued, CO₂e avoided and 
+rescue rate calculated by the backend.
+Screenshot 2: Find Food page with filters
+What it shows: available donations loaded from MongoDB, 
+with search, city, category and status filters.
+ENR NO.: 240410107011
+9
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+Screenshot 3: Donor posting surplus food
+What it shows: controlled React form with category, 
+quantity (live meal estimate), expiry time and address.
+Screenshot 4: Donor dashboard after posting
+What it shows: the new donation saved with status 
+Available, with personal impact numbers and status tabs.
+Screenshot 5: NGO claiming food
+What it shows: the NGO view with Claim buttons and the 
+success message after a claim.
+Screenshot 6: NGO dashboard after pickup
+What it shows: the claimed donation marked Picked up; the 
+donor phone is visible only for the active pickup.
+Screenshot 7: Plain HTML/CSS/JavaScript page
+What it shows: a page without React that uses fetch() and 
+DOM manipulation to show /api/stats data.
+Screenshot 8: REST API response in the browser
+What it shows: raw JSON returned by GET /api/stats, 
+produced by MongoDB aggregation.
+ENR NO.: 240410107011
+10
+
+SARDAR VALLABHBHAI PATEL INSTITUTE OF  TECHNOLOGY,VASAD
+SUB NAME:  Web Application Development
+SUBJECT CODE: BE05000281
+Screenshot 9: Automated test results (npm test)
+What it shows: Jest and Supertest results: all 8 unit and API tests passed.
+6. Conclusion and Future Scope
+FoodBridge solves a real social problem with a complete web application. Donors can list surplus 
+food in under a minute, NGOs can find and claim it without conflicts, and every donation is tracked 
+from listing to pickup. The project uses all the main parts of web application development: HTML 
+and CSS for structure and layout, JavaScript for logic, React for the user interface, Node.js and 
+Express for the REST API, MongoDB for storage, and security with bcrypt and JWT. The live 
+impact dashboard connects the work directly to SDG 2 and SDG 12.
+Future scope:
+•
+Map view with distance-based sorting using geolocation.
+•
+SMS or WhatsApp alerts to nearby NGOs when new food is listed.
+•
+Photo upload of food and a food-safety checklist for donors.
+•
+Volunteer driver role for pickup and delivery.
+•
+Progressive Web App (PWA) and monthly impact reports for donors.
+7. References
+1. United Nations, "Sustainable Development Goals – Goal 2 and Goal 12", sdgs.un.org.
+2. FAO (2013), "Food Wastage Footprint: Impacts on Natural Resources", Food and 
+Agriculture Organization.
+3. React documentation, react.dev.
+4. Express.js documentation, expressjs.com.
+5. MongoDB and Mongoose documentation, mongodb.com/docs and mongoosejs.com.
+6. MDN Web Docs – HTML, CSS, JavaScript and HTTP, developer.mozilla.org.
+ENR NO.: 240410107011
+11
