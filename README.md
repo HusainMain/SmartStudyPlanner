@@ -134,7 +134,15 @@ npm run dev
 | 2. JavaScript Interactivity | ✅ Done |
 | 3. Backend Development | ✅ Done |
 | 4. React Frontend | ✅ Done |
-| 5. Deployment | ⏳ Pending |
+| 5. Deployment | ✅ Done |
+
+---
+
+## 🌐 Live Deployment
+
+- **Frontend (Vercel):** https://smart-study-planner-pi-gules.vercel.app
+- **Backend API (Render):** https://smartstudyplanner-api.onrender.com
+- **Database:** MongoDB Atlas (free cluster)
 
 ---
 

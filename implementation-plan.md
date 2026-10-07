@@ -24,15 +24,20 @@ reflected in the Phase 5 hosting/domain work.
 
 ## Project Status
 
-**Overall: ~70% complete** (Phases 1–4 done)
+**Overall: 100% complete** (all phases done)
 
 | Phase | Status | % Done | Notes |
 |-------|--------|--------|-------|
 | 1. HTML & CSS Foundation | Done | 100% | Redesigned with indigo theme, Space Grotesk/DM Sans, responsive.css |
 | 2. JavaScript Interactivity | Done | 100% | Auth validation, task CRUD via localStorage, filters, deadline sort, Pomodoro timer |
 | 3. Backend Development | Done | 100% | Express + MongoDB (Mongoose), JWT auth, tasks/subjects CRUD |
-| 4. React Frontend | Done | 100% | Vite + react-router; components; hooks; API integration; UX polish pass (edit task, editable timer, sort, add-subject, landing page, overdue highlight, token-expiry redirect) |
-| 5. Deployment | Not Started | 0% | — |
+| 4. React Frontend | Done | 100% | Vite + react-router; components; hooks; API integration; UX polish pass |
+| 5. Deployment | Done | 100% | Vercel + Render + MongoDB Atlas |
+
+**Live URLs:**
+- Frontend: https://smart-study-planner-pi-gules.vercel.app
+- API: https://smartstudyplanner-api.onrender.com
+| 5. Deployment | Done | 100% | Live: Vercel frontend + Render API + MongoDB Atlas |
 
 ### Milestone Tracker
 
@@ -46,7 +51,7 @@ reflected in the Phase 5 hosting/domain work.
 | 6 | Tasks/subjects CRUD + DB | Done |
 | 7 | React components | Done |
 | 8 | React API integration | Done |
-| 9 | Deployment | Pending |
+| 9 | Deployment | Done |
 | 10 | Docs + demo video | Pending |
 
 Update the % and Status cells as you go; the overall number is a rough average of phase completion.
