@@ -79,7 +79,7 @@ SmartStudyPlanner/
 │   ├── routes/             # auth, tasks, subjects
 │   ├── middleware/         # JWT auth
 │   └── index.js
-├── css/, js/, images/      # Phase 1–2 vanilla version (reference)
+├── css/, js/               # Phase 1–2 vanilla version (reference)
 ├── docs/screenshots/
 ├── implementation-plan.md  # Milestones, status, risks
 └── problem-and-solution.md # Problem statement & SDG 4 alignment
